@@ -10,7 +10,7 @@ Scheduler = AsyncIOScheduler()
 build_dir = os.path.abspath('../mcwzh-meme-web-builder-server/builds')
 
 
-@Scheduler.scheduled_job(IntervalTrigger(seconds=5))
+@Scheduler.scheduled_job(IntervalTrigger(seconds=30))
 def delete_old_builds():
     for file in os.listdir(build_dir):
         file_path = os.path.join(build_dir, file)
